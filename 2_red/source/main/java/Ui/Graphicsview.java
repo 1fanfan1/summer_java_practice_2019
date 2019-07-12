@@ -21,11 +21,11 @@ import java.util.Scanner;
 public class Graphicsview extends JFrame {
     private JMenuBar menuBar = new JMenuBar();
     public JTextArea jTextArea;
-    public JButton prevButton = new JButton("Prev");
-    public JButton nextButton = new JButton("Next");
-    public  JButton startButton = new JButton("Start");
-    public JButton goToStart = new JButton("goToStart");
-    public JButton goToEnd = new JButton("goToEnd");
+    public JButton prevButton = new JButton(new ImageIcon(getClass().getResource("/Image/back.png")));
+    public JButton nextButton = new JButton(new ImageIcon(getClass().getResource("/Image/next.png")));
+    public  JButton startButton = new JButton(new ImageIcon(getClass().getResource("/Image/start.png")));
+    public JButton goToStart = new JButton(new ImageIcon(getClass().getResource("/Image/goToStart.png")));
+    public JButton goToEnd = new JButton(new ImageIcon(getClass().getResource("/Image/goToEnd.png")));
     public JTextField counter = new JTextField();
     private JSlider jSlider;
     private List<Node> listNode = new ArrayList<Node>();
@@ -72,21 +72,18 @@ public class Graphicsview extends JFrame {
          * start
          */
         startButton.setEnabled(false);
-        startButton.setIcon(new ImageIcon(getClass().getResource("/Image/icon.jpeg")));
         startButton.addActionListener(new StartCommand(graph, drawer,this));/*cюда передаешь нужные тебе данные*/
         panelSlider.add(startButton);
         /**
          *   goToStart
          */
         goToStart.setEnabled(false);
-        goToStart.setIcon(new ImageIcon(getClass().getResource("/Image/icon.jpeg")));
         goToStart.addActionListener(new goToStartCommand(drawer,this));
         panelSlider.add(goToStart);
         /**
          *  prevButton
          */
         prevButton.setEnabled(false);
-        prevButton.setIcon(new ImageIcon(getClass().getResource("/Image/icon.jpeg")));
         prevButton.addActionListener(new PrevCommand(drawer,this));
         panelSlider.add(prevButton);
         /**
@@ -99,14 +96,12 @@ public class Graphicsview extends JFrame {
          *  nextButton
          */
         nextButton.setEnabled(false);
-        nextButton.setIcon(new ImageIcon(getClass().getResource("/Image/icon.jpeg")));
         nextButton.addActionListener(new NextCommand(drawer,this));
         panelSlider.add(nextButton);
         /**
          * goToEnd
          */
         goToEnd.setEnabled(false);
-        goToEnd.setIcon(new ImageIcon(getClass().getResource("/Image/icon.jpeg")));
         goToEnd.addActionListener(new goToEndCommand(drawer,this));
         panelSlider.add(goToEnd);
 
